@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Big O\Documents\ChatMe\app\libs\picasso-2.5.2.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\pre-dexed\debug\picasso-2.5.2-4bf15d764dfd2a96c90092e89335037f28317d5e.jar" />
+    </item>
+    <item
+        jar="C:\Users\Big O\Documents\ChatMe\app\libs\commons-io-2.4.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b1b6ea3b7e4aa4f492509a4952029cd8e48019ad">
+        <dex dex="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\pre-dexed\debug\commons-io-2.4-8160ace21df645ab49b08e96afc3a0d475c36f82.jar" />
+    </item>
+    <item
+        jar="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\pre-dexed\debug\classes-a67824a3a74ff9b7e06f5272cce9e3765bcb43aa.jar" />
+    </item>
+    <item
+        jar="C:\Users\Big O\Documents\ChatMe\app\libs\Parse-1.10.3.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dfef23b83f8434c6e881096e1ac6d54dc3e52041">
+        <dex dex="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\pre-dexed\debug\Parse-1.10.3-71c2610233ef8ab3a8691bc457d5f9ea9a1f8b7f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Big O\Documents\ChatMe\app\libs\bolts-android-1.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="44780c2cf98f6a3cf4e77f1234d644758b329201">
+        <dex dex="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.1-7b8ee288f20b4bedfcc0c2a35d38647f345f154d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Public\Documents\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.0\support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.0-6c430d5e23cb57f736c9b3fb96d3809f3bdd06c6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\jars\libs\internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.0-9182d32df0b413f8dab6b445326a8568bc2a53b0.jar" />
+    </item>
+    <item
+        jar="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="C:\Users\Big O\Documents\ChatMe\app\build\intermediates\pre-dexed\debug\classes-0ada58d40f12aa7d6f2be0f9b3adad1660d50bca.jar" />
+    </item>
+
+</items>

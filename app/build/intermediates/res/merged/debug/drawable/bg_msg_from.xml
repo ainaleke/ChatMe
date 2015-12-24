@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+   android:shape="rectangle" >
+   
+   <!-- view Background color -->
+   <solid android:color="@color/bg_msg_from"></solid>   
+   <corners android:radius="5dp"></corners> 
+</shape>
+<!-- From: file:/C:/Users/Big%20O/Documents/ChatMe/app/src/main/res/drawable/bg_msg_from.xml -->
