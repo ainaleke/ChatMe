@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.squareup.picasso.Picasso;
 import java.math.BigInteger;
@@ -52,7 +50,6 @@ public class ChatScreenAdapter extends ArrayAdapter {
         // just use the viewHolder
         //holder = (ViewHolder)convertView.getTag();
         //final boolean isMe= message.getUsername().equals(mUserId); //.getUserId().equals(mUserId);//ParseUser.getCurrentUser().getObjectId());
-
         //final boolean isMe= message.getUserId().equals(mUserId);
         //Show-hide image based on the logged-in user.
         //Display the profile  image to the right for our user, left for other users
@@ -75,6 +72,25 @@ public class ChatScreenAdapter extends ArrayAdapter {
 
         //final ImageView profileView=isMe ? holder.imageLeft:holder.imageRight;
         final ImageView profileView=holder.imageLeft;
+
+        final boolean isMe= message.getUserId().equals(mUserId);
+        //Show-hide image based on the logged-in user.
+        //Display the profile  image to the right for our user, left for other users
+        if(isMe) {
+            holder.imageLeft.setVisibility(View.VISIBLE);
+            holder.imageRight.setVisibility(View.GONE);
+            holder.username.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+            holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+
+        }
+
+       else
+        {
+            holder.imageLeft.setVisibility(View.VISIBLE);
+            holder.imageRight.setVisibility(View.GONE);
+            holder.username.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+            holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER);
+        }
         Picasso.with(getContext()).load(getProfileUrl(message.getUserId())).into(profileView);
         holder.body.setText(message.getBody());
         holder.username.setText(message.getUsername());

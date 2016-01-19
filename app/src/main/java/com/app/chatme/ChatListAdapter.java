@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -17,44 +19,66 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.util.List;
 
-public class ChatListAdapter extends ArrayAdapter {
+public class ChatListAdapter extends BaseAdapter {
 
     private Context mContext;
-    private int resourceId;
-    private String[] items;
+    private String mresourceId;
+    private List<User> items;
 
-    public ChatListAdapter(Context context, int textViewResourceId, String[] list) {
-        super(context, textViewResourceId, list);
+    public ChatListAdapter(Context context, String resourceId, List<User> list) {
+        //super(context, textViewResourceId, list);
         mContext = context;
-        resourceId = textViewResourceId;
+        mresourceId = resourceId;
         items = list;
     }
 
     @Override
+    public int getCount() {
+        return items.size();
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return items.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;//used to tag items for easy reference
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ((ListView) parent).setItemChecked(position, true);
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.chat_list_view_item, parent, false);
-            final ViewHolder holder = new ViewHolder();
-            holder.profilePicture = (ImageView) convertView.findViewById(R.id.chat_list_imageView);
+        //((ListView) parent).setItemChecked(position, true);
+        ViewHolder holder = new ViewHolder();
+        if (convertView == null) { //brand new we arent reusing any new views
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.chat_list_view_item, parent, false);
+            holder.profilePicture = (ImageView) convertView.findViewById(R.id.profile_picture);
             holder.usernameTextView = (TextView) convertView.findViewById(R.id.textView);
             convertView.setTag(holder);
         }
+        else {
+            //if we scroll, get the convertView which has scrolled up, identified by its tag to be reused in the View Holder
+            holder = (ViewHolder) convertView.getTag();
+//            if (items[position] != null) {
+//                text.setText(items[position]);
+//                text.setTextColor(Color.BLACK);
+//            }
+        }
+        //place in the new values or data into viewholder
+        holder.usernameTextView= (TextView) convertView.findViewById(R.id.textView);
+        holder.profilePicture= (ImageView) convertView.findViewById(R.id.profile_picture);
 
-        //TextView text = (TextView) convertView.findViewById(R.id.textView);
-
-//        if (items[position] != null) {
-//            text.setText(items[position]);
-//        }
-        User userList =(User) getItem(position);
-        final ViewHolder holder=(ViewHolder)convertView.getTag();
-
+        User userList = (User) getItem(position);
+        //Set visibility
         holder.profilePicture.setVisibility(View.VISIBLE);
+        holder.usernameTextView.setVisibility(View.VISIBLE);
 
         //final ImageView profileView=isMe ? holder.imageLeft:holder.imageRight;
-        final ImageView profileView=holder.profilePicture;
-        Picasso.with(getContext()).load(getProfileUrl(userList.getUsername())).into(profileView);
+        final ImageView profileView = holder.profilePicture;
+        Picasso.with(mContext).load(getProfileUrl(userList.getUsername())).into(profileView);
         holder.usernameTextView.setText(userList.getUsername());
+
         return convertView;
     }
 
@@ -77,10 +101,9 @@ public class ChatListAdapter extends ArrayAdapter {
         return "http://www.gravatar.com/avatar/"+hex +"?d=identicon";
     }
 
-    final class ViewHolder {
+    private static class ViewHolder {
         public ImageView profilePicture;
         private TextView usernameTextView;
 
     }
-
 }

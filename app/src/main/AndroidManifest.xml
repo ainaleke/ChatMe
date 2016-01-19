@@ -55,9 +55,14 @@
         <activity
             android:name=".ChatActivity"
             android:label="ChatMe" >
+            android:parentActivityName=".ChatListActivity"
+            android:theme="@android:style/Theme.Holo.Light"
+            <!--Parent activity meta data to support 4.0 and lower -->
+
         </activity>
         <activity
             android:name=".ChatListActivity"
+            android:icon="@drawable/chatapp_logo"
             android:label="@string/title_activity_chat_list" >
         </activity>
         <activity

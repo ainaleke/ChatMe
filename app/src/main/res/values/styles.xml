@@ -12,4 +12,12 @@
         <item name="colorPrimaryDark">@color/honeydew4</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!--android:theme="@android:style/Theme.Holo.Light"-->
+    <style name="HoloLight" parent="Theme.AppCompat.Light">
+
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/honeydew4</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 </resources>

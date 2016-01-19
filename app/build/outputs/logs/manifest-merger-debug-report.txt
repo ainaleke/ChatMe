@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:2:1-69:12
+ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:2:1-74:12
 	package
 		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:3:5-29
 		INJECTED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml
@@ -36,9 +36,10 @@ ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:13:5
 	android:name
 		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:13:22-68
 application
-ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:15:5-67:19
-MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:22:5-20
+ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:15:5-72:19
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:19:9-41
 	android:allowBackup
@@ -108,27 +109,30 @@ ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:50:9
 	android:name
 		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:51:13-43
 activity#com.app.chatme.ChatActivity
-ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:55:9-58:20
+ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:55:9-62:20
 	android:label
 		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:57:13-35
 	android:name
 		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:56:13-41
 activity#com.app.chatme.ChatListActivity
-ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:59:9-62:20
+ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:63:9-67:20
 	android:label
-		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:61:13-61
+		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:66:13-61
+	android:icon
+		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:65:13-50
 	android:name
-		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:60:13-45
+		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:64:13-45
 activity#com.app.chatme.ImageUploadActivity
-ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:63:9-66:20
+ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:68:9-71:20
 	android:label
-		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:65:13-64
+		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:70:13-64
 	android:name
-		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:64:13-48
+		ADDED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml:69:13-48
 uses-sdk
 INJECTED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:appcompat-v7:23.1.0] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.0\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.1.0] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Big O\Documents\ChatMe\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\AndroidManifest.xml:20:5-43
 	android:targetSdkVersion
 		INJECTED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Big O\Documents\ChatMe\app\src\main\AndroidManifest.xml

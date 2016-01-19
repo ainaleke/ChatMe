@@ -53,8 +53,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="72dp"
-        android:text="ChatMe"
+        android:text="ChatUp"
         android:textSize="22sp"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
     <Button
@@ -62,14 +63,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN"
-        android:textColor="@color/white"
+        android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:paddingRight="25dp"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:paddingLeft="25dp"
         android:layout_marginRight="20dp"
-        android:background="@color/colorPrimary"
+        android:background="@color/white"
         android:layout_below="@+id/linearLayout1"
         android:layout_alignRight="@+id/linearLayout1"
         android:layout_alignEnd="@+id/linearLayout1" />

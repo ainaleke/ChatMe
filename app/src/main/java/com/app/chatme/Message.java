@@ -16,8 +16,8 @@ public class Message extends ParseObject{
 
     public String getUsername()
     {
-
         return getString("sender");//getParseUser("username");
+      //  return ParseUser.getCurrentUser().getUsername();//getParseUser("username");
     }
     public String get(String value)
     {

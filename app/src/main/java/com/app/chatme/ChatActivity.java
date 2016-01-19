@@ -1,6 +1,7 @@
 package com.app.chatme;
 
 import android.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -44,7 +45,6 @@ public class ChatActivity extends AppCompatActivity {
     private List<ParseObject> arrayListMessages;
     private Button btSend;
     private String recipientName=null;
-
     private ChatScreenAdapter chatArrayAdapter;
     private EditText etMessage;
     private ListView lvChat;
@@ -60,7 +60,6 @@ public class ChatActivity extends AppCompatActivity {
     public static final int CHOOSE_VIDEO_REQ_CODE = 3;
     public static final int MEDIA_TYPE_IMAGE = 4;
     public static final int MEDIA_TYPE_VIDEO = 5;
-
     public static final int VIDEO_FILE_SIZE_LIMIT=1024*1024*10; //1024 bytes * 1024 bytes=1MB * 10=10MB
 
     protected Uri mediaUri;
@@ -77,7 +76,7 @@ public class ChatActivity extends AppCompatActivity {
                     Intent takePictureIntent= new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     mediaUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE);
                     if(mediaUri==null) {
-                        Toast.makeText(getApplicationContext(), R.string.error_external_storage, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),R.string.error_external_storage, Toast.LENGTH_SHORT).show();
                     }
 
                     else {
@@ -168,7 +167,6 @@ public class ChatActivity extends AppCompatActivity {
         private boolean isExternalStorageAvailable()
         {
             String state = Environment.getExternalStorageState();
-
             if(state.equals(Environment.MEDIA_MOUNTED))
             {
                 return true;
@@ -185,14 +183,12 @@ public class ChatActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);//ParseUser.getCurrentUser().toString()
-
         //Get intent Data
         Intent intent = getIntent();
         username=intent.getStringExtra("EXTRA_MESSAGE");
         //set the title bar to the Clicked on user name
         recipientName=username.toString().toLowerCase();
         setTitle(username);
-
         //getActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Display Toast text-For debugging purposes
@@ -225,7 +221,6 @@ public class ChatActivity extends AppCompatActivity {
         btSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String data = etMessage.getText().toString();
                 ParseObject message = ParseObject.create("Message");
                 message.put("userId", currentUserId);
@@ -263,7 +258,7 @@ public class ChatActivity extends AppCompatActivity {
         @Override
         public void run() {
             refreshMessages();
-            handler.postDelayed(this, 1000);
+            handler.postDelayed(this, 2000);
         }
     };
 
