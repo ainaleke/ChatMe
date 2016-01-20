@@ -11,7 +11,9 @@ import com.parse.ParseUser;
 @ParseClassName("User")
 public class User extends ParseUser {
 
-    public User() {}
+    public User() {
+        super();
+    }
 
     public String getObjectId(){
 

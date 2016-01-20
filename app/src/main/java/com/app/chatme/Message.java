@@ -10,7 +10,7 @@ import com.parse.ParseUser;
 public class Message extends ParseObject{
     //default constructor is required
 
-    public Message(){
+    public Message() {
         super();
     }
 
@@ -21,6 +21,7 @@ public class Message extends ParseObject{
     }
     public String get(String value)
     {
+
         return getString("value");
     }
     public String getUserId(){

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import com.parse.FindCallback;
 import com.parse.Parse;
+import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -29,11 +31,11 @@ public class ChatListActivity extends AppCompatActivity {
     ParseUser currentUser;
     ListView lvChatList;
     ChatListAdapter arrayAdapter;
-    ArrayList<String> chatList;
+
     int MAX_CHAT_FRIENDS_TO_SHOW=10;
     String currentUserId;
     boolean firstLoad;
-    protected List<User> mUser=new ArrayList<User>();
+    protected List<ParseUser> mUser=new ArrayList<ParseUser>();
     String[] usernames;
     String objectId;
     private Handler chatListHandler=new Handler();
@@ -42,15 +44,17 @@ public class ChatListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_list);
         setTitle("Chats");
+        //Set default Public Read Access for everyone
+        ParseACL defaultACL = new ParseACL();
+        defaultACL.setPublicReadAccess(true);
+        ParseACL.setDefaultACL(defaultACL, true);
         //getActionBar().setIcon(R.drawable.chatapp_logo);
-
         firstLoad=true;
         objectId=ParseUser.getCurrentUser().getObjectId();
         lvChatList = (ListView) findViewById(R.id.chat_listView);
         //lvChatList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-        arrayAdapter = new ChatListAdapter(getApplicationContext(),objectId , mUser);
-        lvChatList.setAdapter(arrayAdapter);
         queryFriendsList();
+
 
         lvChatList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -70,7 +74,7 @@ public class ChatListActivity extends AppCompatActivity {
         @Override
         public void run() {
             refreshFriendsList();
-            chatListHandler.postDelayed(this, 5000);
+            chatListHandler.postDelayed(this, 3000);
         }
     };
 
@@ -80,24 +84,28 @@ public class ChatListActivity extends AppCompatActivity {
     }
 
     private void queryFriendsList() {
-        ParseQuery<User> query = ParseQuery.getQuery("User");
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
         //query all users excluding yourself
         query.whereNotEqualTo("username", ParseUser.getCurrentUser().getUsername());
         //orderByAscending("username");  //
         query.orderByAscending("username");
         query.setLimit(MAX_CHAT_FRIENDS_TO_SHOW);
-        query.findInBackground(new FindCallback<User>() {
+        query.findInBackground(new FindCallback<ParseUser>() {
             @Override
-            public void done(List<User> usersList, ParseException e) {
+            public void done(List<ParseUser> usersList, ParseException e) {
                 if (e == null) {
-                    mUser.clear();
-                    mUser.addAll(usersList);
-                    //String[] usernames = new String[usersList.size()];
+                    mUser=usersList;
+                    //mUser.addAll(usersList);
+//                    Log.d("users", "Retrieved " + usersList.size());
+//                    String[] usernames = new String[usersList.size()];
 //                    int i = 0;
-//                    for (User user : mUser) {
-//                        usernames[i] = user.get("username").toString();
+//                    for (ParseUser parseObject : mUser) {
+//                        usernames[i] = parseObject.get("username").toString();
 //                        i++;
-                    //}
+//                    }
+                    //arrayAdapter = new ChatListAdapter(getApplicationContext(),objectId, usernames);
+                    arrayAdapter = new ChatListAdapter(getApplicationContext(),objectId , mUser);
+                    lvChatList.setAdapter(arrayAdapter);
                     arrayAdapter.notifyDataSetChanged();
                 } else {
                     Toast.makeText(getApplicationContext(), "Error Loading Chat List", Toast.LENGTH_LONG).show();

@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.parse.ParseUser;
 import com.squareup.picasso.Picasso;
 
 import java.math.BigInteger;
@@ -23,9 +24,9 @@ public class ChatListAdapter extends BaseAdapter {
 
     private Context mContext;
     private String mresourceId;
-    private List<User> items;
+    private List<ParseUser> items;
 
-    public ChatListAdapter(Context context, String resourceId, List<User> list) {
+    public ChatListAdapter(Context context, String resourceId, List<ParseUser> list) {
         //super(context, textViewResourceId, list);
         mContext = context;
         mresourceId = resourceId;
@@ -69,7 +70,7 @@ public class ChatListAdapter extends BaseAdapter {
         holder.usernameTextView= (TextView) convertView.findViewById(R.id.textView);
         holder.profilePicture= (ImageView) convertView.findViewById(R.id.profile_picture);
 
-        User userList = (User) getItem(position);
+        ParseUser userList = (ParseUser) getItem(position);
         //Set visibility
         holder.profilePicture.setVisibility(View.VISIBLE);
         holder.usernameTextView.setVisibility(View.VISIBLE);
