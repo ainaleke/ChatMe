@@ -11,7 +11,7 @@ import java.io.InputStream;
 import org.apache.commons.io.IOUtils;
 import java.io.ByteArrayOutputStream;
 import android.content.Context;
-import android.graphics.Bitmap;
+import android.graphics.Bitmap; 
 import android.net.Uri;
 import android.util.Log;
 public class FileHelper {
