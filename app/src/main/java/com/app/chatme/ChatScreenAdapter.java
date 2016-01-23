@@ -14,8 +14,7 @@ import java.security.MessageDigest;
 import java.util.List;
 
 public class ChatScreenAdapter extends ArrayAdapter {
-   public  String mUserId;
-    private int resourceId;
+    public  String mUserId;
     private List itemMessages;
 
     public ChatScreenAdapter(Context context,String resourceId, List messages) {
@@ -49,44 +48,44 @@ public class ChatScreenAdapter extends ArrayAdapter {
 
 
         if(message.getSender().equals(ParseUser.getCurrentUser().getUsername())){
-            holder.imageRight.setVisibility(View.GONE);
-            holder.imageLeft.setVisibility(View.VISIBLE);
-            holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.RIGHT);
+            holder.imageLeft.setVisibility(View.GONE);
+            holder.imageRight.setVisibility(View.VISIBLE);
+            //holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
 
             //if file type is an Image
             if(message.getString(ParseConstantsClass.KEY_FILE_TYPE).equals(ParseConstantsClass.IMAGE_FILE_TYPE))//if filetype coming is of type image
             {
-                holder.imageLeft.setImageResource(R.drawable.ic_action_picture);
+                holder.imageRight.setImageResource(R.drawable.ic_action_picture);
             }
             //if file type is video
 
             else if(message.getString(ParseConstantsClass.KEY_FILE_TYPE).equals(ParseConstantsClass.VIDEO_FILE_TYPE)) {
-                holder.imageLeft.setImageResource(R.drawable.ic_action_play);
+                holder.imageRight.setImageResource(R.drawable.ic_action_play);
             }
             //if file is text
             else{
-                profileView=holder.imageLeft;
-                holder.body.setGravity(Gravity.AXIS_X_SHIFT | Gravity.LEFT);
+                profileView=holder.imageRight;
+                holder.body.setGravity(Gravity.RIGHT);
                 Picasso.with(getContext()).load(getProfileUrl(message.getUserId())).into(profileView);
                 holder.body.setText(message.getBody());
             }
         }
         else {
-            holder.imageRight.setVisibility(View.VISIBLE);
-            holder.imageLeft.setVisibility(View.GONE);
-            holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
+            holder.imageLeft.setVisibility(View.VISIBLE);
+            holder.imageRight.setVisibility(View.GONE);
+            //holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
             //if file type is an Image
             if (message.getString(ParseConstantsClass.KEY_FILE_TYPE).equals(ParseConstantsClass.IMAGE_FILE_TYPE)) {
-                holder.imageRight.setImageResource(R.drawable.ic_action_picture);
+                holder.imageLeft.setImageResource(R.drawable.ic_action_picture);
             }
             //if file type is video
             else if(message.getString(ParseConstantsClass.KEY_FILE_TYPE).equals(ParseConstantsClass.VIDEO_FILE_TYPE)) {
-                holder.imageRight.setImageResource(R.drawable.ic_action_play);
+                holder.imageLeft.setImageResource(R.drawable.ic_action_play);
             }
             //if file type is text
             else{
-                profileView=holder.imageRight;
-                holder.body.setGravity(Gravity.AXIS_X_SHIFT | Gravity.RIGHT);
+                profileView=holder.imageLeft;
+                holder.body.setGravity(Gravity.LEFT);
                 Picasso.with(getContext()).load(getProfileUrl(message.getUserId())).into(profileView);
                 holder.body.setText(message.getBody());
             }
