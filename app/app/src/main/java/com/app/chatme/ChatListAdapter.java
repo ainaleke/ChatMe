@@ -11,7 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class ChatListAdapter extends BaseAdapter {
-
+ 
     private Context mContext;
     private String mresourceId;
     private List<ParseUser> items;
