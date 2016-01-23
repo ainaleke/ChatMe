@@ -2,8 +2,6 @@ package com.app.chatme;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
-import com.parse.ParseUser;
-
 
 @ParseClassName("Message")
 
@@ -18,6 +16,12 @@ public class Message extends ParseObject{
     {
         return getString("sender");//getParseUser("username");
       //  return ParseUser.getCurrentUser().getUsername();//getParseUser("username");
+    }
+
+    public String getSender()
+    {
+        return getString("sender");//getParseUser("username");
+        //  return ParseUser.getCurrentUser().getUsername();//getParseUser("username");
     }
     public String get(String value)
     {
@@ -50,7 +54,4 @@ public class Message extends ParseObject{
     public void setBody(String body){
         put("body",body);
     }
-
-
-
 }
