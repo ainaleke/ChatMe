@@ -60,7 +60,8 @@ public class ChatListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
-                intent.putExtra("EXTRA_MESSAGE", (String) lvChatList.getItemAtPosition(position));
+                ParseUser currentUser=(ParseUser) lvChatList.getItemAtPosition(position);
+                intent.putExtra("EXTRA_MESSAGE",currentUser.getUsername().toString());
                 startActivity(intent);
             }
 
