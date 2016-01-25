@@ -1,7 +1,6 @@
 package com.app.chatme;
 
 import android.app.AlertDialog;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -28,7 +27,6 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -61,9 +59,7 @@ public class ChatActivity extends AppCompatActivity {
     public static final int MEDIA_TYPE_IMAGE = 4;
     public static final int MEDIA_TYPE_VIDEO = 5;
     public static final int VIDEO_FILE_SIZE_LIMIT=1024*1024*10; //1024 bytes * 1024 bytes=1MB * 10=10MB
-
     protected Uri mediaUri;
-
     final String TAG = getClass().getName();
 
     protected DialogInterface.OnClickListener mediaDialogListener = new DialogInterface.OnClickListener()
