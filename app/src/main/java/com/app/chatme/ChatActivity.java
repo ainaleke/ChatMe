@@ -473,14 +473,14 @@ public class ChatActivity extends AppCompatActivity {
 
     }//end Method to upload media file to Parse
 
+    //String sort is a method which creates a unique identifier to sift out the right chats to be queried for on parse, using
+    //both sender and receiver names-which are taken as string arguments
     public  String stringSort(String str1,String str2)
     {
         String concat=str1+str2;
         char[] stringToChar=concat.toCharArray();
-
         java.util.Arrays.sort(stringToChar);
-
+        
         return new String(stringToChar);
     }
-
 }
