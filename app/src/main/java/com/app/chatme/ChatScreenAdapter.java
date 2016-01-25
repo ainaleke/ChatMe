@@ -43,10 +43,8 @@ public class ChatScreenAdapter extends ArrayAdapter {
         }
 
         Message message =(Message)getItem(position);
-        //boolean isMe=message.getSender().equals(ParseUser.getCurrentUser());
-        //final ImageView profileView=isMe ? holder.imageLeft:holder.imageRight;
-
-
+        
+        //if the message sent is Mine then align to the Right otherwise, align to the left
         if(message.getSender().equals(ParseUser.getCurrentUser().getUsername())){
             holder.imageLeft.setVisibility(View.GONE);
             holder.imageRight.setVisibility(View.VISIBLE);
