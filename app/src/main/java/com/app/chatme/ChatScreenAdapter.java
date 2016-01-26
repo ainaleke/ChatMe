@@ -48,7 +48,6 @@ public class ChatScreenAdapter extends ArrayAdapter {
         if(message.getSender().equals(ParseUser.getCurrentUser().getUsername())){
             holder.imageLeft.setVisibility(View.GONE);
             holder.imageRight.setVisibility(View.VISIBLE);
-            //holder.body.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
 
             //if file type is an Image
             if(message.getString(ParseConstantsClass.KEY_FILE_TYPE).equals(ParseConstantsClass.IMAGE_FILE_TYPE))//if filetype coming is of type image
@@ -108,6 +107,7 @@ public class ChatScreenAdapter extends ArrayAdapter {
         return "http://www.gravatar.com/avatar/"+hex +"?d=identicon";
     }
 
+    //view Holder class
     final class ViewHolder {
         public ImageView imageLeft;
         public ImageView imageRight;
