@@ -31,7 +31,6 @@ public class ChatListActivity extends AppCompatActivity {
     ParseUser currentUser;
     ListView lvChatList;
     ChatListAdapter arrayAdapter;
-
     int MAX_CHAT_FRIENDS_TO_SHOW=10;
     String currentUserId;
     boolean firstLoad;
@@ -60,16 +59,26 @@ public class ChatListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), ChatActivity.class);
-                ParseUser currentUser=(ParseUser) lvChatList.getItemAtPosition(position);
-                intent.putExtra("EXTRA_MESSAGE",currentUser.getUsername().toString());
+                ParseUser currentUser = (ParseUser) lvChatList.getItemAtPosition(position);
+                intent.putExtra("EXTRA_MESSAGE", currentUser.getUsername().toString());
                 startActivity(intent);
             }
 
         });
+    }
 
+    @Override
+    protected void onResume() {
+
+        super.onResume();
         chatListHandler.postDelayed(runnable, 3000);
     }
 
+    @Override
+    protected void onPause(){
+        super.onPause();
+        chatListHandler.postDelayed(runnable, 120000);//when its not in the foreground, let it access the network every 2 mins
+    }
     private Runnable runnable =new Runnable()
     {
         @Override
