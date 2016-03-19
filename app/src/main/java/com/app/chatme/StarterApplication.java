@@ -22,7 +22,7 @@ public class StarterApplication extends Application{
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
 
-        // Add your initialization code here
+        // Add your initialization code here by adding both the Client and Application Key here
         Parse.initialize(this, "7mSUEdHf3LOUwGrMko795rY9kYXUXXSk0v0dHw8j", "0DHkUAWeXffw61q7s008rOj2i2Myce7atkCVw1bp");
 
 
